@@ -1,4 +1,4 @@
-interface PatternStructure {
+interface IPattern {
   UNICode       : string
   documentNumber: string
   documentType  : string
@@ -13,4 +13,4 @@ interface PatternStructure {
   type          : string
 }
 
-export { PatternStructure }
+export { IPattern }

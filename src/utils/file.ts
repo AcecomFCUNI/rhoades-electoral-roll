@@ -1,7 +1,7 @@
 import csv from 'csv-parser'
 import fs from 'fs'
 
-import { PatternStructure } from '../interfaces/interfaces'
+import { IPattern } from '../interfaces/pattern'
 
 const writeJson = (
   path   : string,
@@ -25,12 +25,12 @@ const deleteFile = (path: string): Promise<unknown> => {
   })
 }
 
-const csvReader = (path: string): Promise<PatternStructure[]> => {
+const csvReader = (path: string): Promise<IPattern[]> => {
   return new Promise(resolve => {
-    const results: PatternStructure[] = []
+    const results: IPattern[] = []
       fs.createReadStream(`${__dirname}/../patterns/${path}`)
         .pipe(csv())
-        .on('data', (data: PatternStructure) => results.push(data))
+        .on('data', (data: IPattern) => results.push(data))
         .on('end', () => resolve(results))
   })
 }
