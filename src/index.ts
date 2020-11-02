@@ -8,10 +8,7 @@ const readCsv = async (): Promise<void> => {
     const pattern = await csvReader('pattern_2020-1.csv')
     for (let i = 0; i < pattern.length; i++)
       try {
-        if (pattern[i].type === 'Docente')
-          await User.process('save', 'teachers', pattern[i])
-        else
-          await User.process('save', 'students', pattern[i])
+        await User.process('save', 'users', pattern[i])
 
         console.log(`User: ${i}`)
       } catch (error) {

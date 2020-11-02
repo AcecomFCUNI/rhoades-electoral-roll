@@ -1,6 +1,6 @@
 {
   "name": "rhoades-pattern-upload",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "src/index.ts",
   "description": "A service that allows you to upload the CEUNI pattern to the firebase db",
   "scripts": {

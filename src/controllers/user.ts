@@ -24,7 +24,7 @@ class User {
   private static async _saveUser (
     collection: string,
     user      : IPattern
-    ): Promise<FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>> {
+  ): Promise<FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>> {
     this._collectionRef = global.firestoreDB.collection(collection)
 
     try {
@@ -38,6 +38,7 @@ class User {
         optionalMail  : user.optionalMail,
         secondLastName: user.secondLastName,
         specialty     : user.specialty,
+        type          : user.type === 'Docente' ? 'teacher' : ' student',
         // eslint-disable-next-line sort-keys-fix/sort-keys-fix
         UNICode       : user.UNICode
       })
