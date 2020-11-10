@@ -1,4 +1,9 @@
-# Rhoades Pattern Upload
+# Rhoades Electoral Roll
+
+## Version 0.3.1
+
+- Fixed:
+  - Project name.
 
 ## Version 0.3.0
 
