@@ -1,5 +1,10 @@
 # Rhoades Electoral Roll
 
+## Version 0.4.0
+
+- Implemented:
+  - [`cli-progress`](https://www.npmjs.com/package/cli-progress) to see the progress of the upload.
+
 ## Version 0.3.1
 
 - Fixed:
