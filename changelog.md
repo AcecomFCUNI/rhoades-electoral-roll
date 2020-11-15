@@ -1,5 +1,15 @@
 # Rhoades Electoral Roll
 
+## Version 0.5.2
+
+- Fixed:
+  - Removed static reference to `users` collection in the `User` controller.
+
+## Version 0.5.1
+
+- Fixed:
+  - Async calls in the `index.ts` file.
+
 ## Version 0.5.0
 
 - Implemented:

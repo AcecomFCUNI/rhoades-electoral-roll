@@ -1,6 +1,6 @@
 {
   "name": "rhoades-electoral-roll",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "main": "src/index.ts",
   "description": "A service that allows you to upload the CEUNI pattern to the firebase db",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "lint": "eslint src/* --ext .ts",
     "service": "nodemon",
-    "start": "node dist/index.js"
+    "start": "node -r dotenv/config dist/index.js"
   },
   "author": "AnthonyLzq <sluzquinosa@uni.pe>",
   "license": "MIT",

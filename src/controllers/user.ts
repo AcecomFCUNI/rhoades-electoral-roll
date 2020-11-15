@@ -6,8 +6,6 @@ import { documentType } from '../constants/constants'
 declare const global: CustomNodeJSGlobal
 
 class User {
-  private static _collectionRef = global.firestoreDB.collection('users')
-
   public static process (
     process: string,
     args   : IPattern
@@ -27,8 +25,9 @@ class User {
   private static async _saveUser (args: IPattern): Promise<
     FirebaseFirestore.DocumentReference<FirebaseFirestore.DocumentData>
   > {
+    const collectionRef = global.firestoreDB.collection('users')
     try {
-      const result = await this._collectionRef.add({
+      const result = await collectionRef.add({
         condition     : args.type === 'Docente' ? 'teacher': 'student',
         documentNumber: args.documentNumber,
         documentType  : documentType[args.documentType],
