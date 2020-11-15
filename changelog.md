@@ -1,5 +1,12 @@
 # Rhoades Electoral Roll
 
+## Version 0.5.0
+
+- Implemented:
+  - `dist` folder with the compiled project.
+- Fixed:
+  - Changed type into condition.
+
 ## Version 0.4.0
 
 - Implemented:

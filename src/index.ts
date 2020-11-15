@@ -29,7 +29,7 @@ const readCsv = async (): Promise<void> => {
 
     for (let i = 0; i < pattern.length; i++)
       try {
-        await User.process('save', 'users', pattern[i])
+        await User.process('save', pattern[i])
         bar.update(i + 1)
       } catch (error) {
         console.error(error)
