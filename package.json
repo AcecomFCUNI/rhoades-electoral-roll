@@ -1,6 +1,6 @@
 {
   "name": "rhoades-electoral-roll",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "main": "src/index.ts",
   "description": "A service that allows you to upload the CEUNI pattern to the firebase db",
   "scripts": {

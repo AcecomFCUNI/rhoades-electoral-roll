@@ -1,5 +1,11 @@
 # Rhoades Electoral Roll
 
+## Version 0.6.0
+
+- Implemented:
+  - Development database.
+  - `Promise.all` approach instead sequential.
+
 ## Version 0.5.2
 
 - Fixed:

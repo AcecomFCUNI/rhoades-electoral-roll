@@ -9,7 +9,7 @@ const options = new CliOptions(
   `${colors.bold('Upload electoral roll process')} ${colors.cyan(
     '[{bar}]'
   )} ${colors.blue('{percentage}%')} | ${colors.bold(
-    'Current exchange:'
+    'Current user:'
   )} ${colors.yellow('{value}')} | ${colors.bold('Duration:')} ${colors.green(
     '{duration_formatted}'
   )}`,
@@ -22,23 +22,34 @@ const readCsv = async (): Promise<void> => {
     options,
     cliProgress.Presets.shades_classic
   )
+  let i = 0
 
   try {
     const pattern = await csvReader('pattern_2020-1-v1.csv')
-    bar.start(pattern.length, 0)
+    bar.start(pattern.length + 1, i)
 
-    for (let i = 0; i < pattern.length; i++)
-      try {
-        await User.process('save', pattern[i])
-        bar.update(i + 1)
-      } catch (error) {
-        console.error(error)
-        console.log(`At row: ${i + 2}`)
-      }
+    await Promise.all(pattern.map((patterMember, index) => {
+      i = index
+      bar.update(i + 1)
+
+      return User.process('save', patterMember)
+    }))
+
+    bar.update(i + 1)
+
+    // for (let i = 0; i < pattern.length; i++)
+    //   try {
+    //     await User.process('save', pattern[i])
+    //     bar.update(i + 1)
+    //   } catch (error) {
+    //     console.error(error)
+    //     console.log(`At row: ${i + 2}`)
+    //   }
 
     bar.stop()
   } catch (error) {
     console.error(error)
+    console.log(`At row: ${i + 2}`)
   }
 }
 
